@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FitX Desktop: Your fitness companion with integrated workout and meal planning tailored to your body type.">
+    <title>FitX Desktop - Revolutionize Your Fitness</title>
+    <link href="fitness_styles.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+       $(document).ready(function () {
+            $('.navbar a').on('click', function (e) {
+                e.preventDefault();
+                const target = $(this.hash);
+                $('html, body').animate({
+                    scrollTop: target.offset().top - 50
+                }, 800);
+            });
+
+            $('#discover-features-button').on('click', function (e) {
+                e.preventDefault();
+                const target = $('#features');
+                $('html, body').animate({
+                    scrollTop: target.offset().top - 50
+                }, 800);
+            });
+
+            let currentImageIndex = 0;
+            const images = ['images/FitX-BG1.jpg', 'images/FitX-BG2.jpg', 'images/FitX-BG3.png'];
+
+            function changeImage() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                $('.hero').css('background-image', `url(${images[currentImageIndex]})`);
+            }
+
+            setInterval(changeImage, 3000);
+
+            function checkFadeIn() {
+                $('.fade-in').each(function () {
+                    const elementTop = $(this).offset().top;
+                    const viewportBottom = $(window).scrollTop() + $(window).height();
+
+                    if (elementTop < viewportBottom - 100) {
+                        $(this).addClass('visible');
+                    }
+                });
+            }
+
+            $(window).on('scroll', checkFadeIn);
+            checkFadeIn();
+        });
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <img src="images/FitX Logo.png" alt="FitX Logo" class="logo">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#workout-plans">Workout Plans</a></li>
+                    <li><a href="#meal-plans">Meal Plans</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay">
+            <h1>FitX Desktop</h1>
+            <p>Workouts and meals tailored for your body type, all in one app.</p>
+            <button id="discover-features-button" class="cta">Discover Features</button>
+        </div>
+    </section>
+
+    <section id="features" class="section fade-in">
+        <h2>Core Features of FitX Desktop</h2>
+        <div class="grid-container">
+            <article class="card">
+                <img src="images/FitX-HIIT.png" alt="Workout Feature" class="feature-img">
+                <h3>Workouts with Ratings</h3>
+                <p>Create tailored workout plans with a rating system to find what works best for you.</p>
+            </article>
+            <article class="card">
+                <img src="images/FitX-Meals.png" alt="Meal Feature" class="feature-img">
+                <h3>Integrated Meals</h3>
+                <p>Link nutritional meal plans to workouts, customized for your body type.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="workout-plans" class="section fade-in">
+        <h2>Personalized Workout Plans</h2>
+        <div class="grid-container">
+            <article class="card">
+                <img src="images/workout-feature.png" alt="Workout Plan Feature" class="feature-img">
+                <p>Generate workouts tailored to your fitness level, body type, and goals. Rate your favorite plans and track their impact.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="meal-plans" class="section fade-in">
+        <h2>Smart Meal Planning</h2>
+        <div class="grid-container">
+            <article class="card">
+                <img src="images/meal-feature.png" alt="Meal Plan Feature" class="feature-img">
+                <p>Combine your workout schedule with meals optimized for your body type, ensuring peak performance and recovery.</p>
+            </article>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 FitX Desktop. All rights reserved. <a href="#features">Explore Features</a></p>
+    </footer>
+</body>
+
+</html>
