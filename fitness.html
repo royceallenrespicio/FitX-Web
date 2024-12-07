@@ -8,49 +8,7 @@
     <title>FitX Desktop - Revolutionize Your Fitness</title>
     <link href="fitness_styles.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-       $(document).ready(function () {
-            $('.navbar a').on('click', function (e) {
-                e.preventDefault();
-                const target = $(this.hash);
-                $('html, body').animate({
-                    scrollTop: target.offset().top - 50
-                }, 800);
-            });
-
-            $('#discover-features-button').on('click', function (e) {
-                e.preventDefault();
-                const target = $('#features');
-                $('html, body').animate({
-                    scrollTop: target.offset().top - 50
-                }, 800);
-            });
-
-            let currentImageIndex = 0;
-            const images = ['images/FitX-BG1.jpg', 'images/FitX-BG2.jpg', 'images/FitX-BG3.png'];
-
-            function changeImage() {
-                currentImageIndex = (currentImageIndex + 1) % images.length;
-                $('.hero').css('background-image', `url(${images[currentImageIndex]})`);
-            }
-
-            setInterval(changeImage, 3000);
-
-            function checkFadeIn() {
-                $('.fade-in').each(function () {
-                    const elementTop = $(this).offset().top;
-                    const viewportBottom = $(window).scrollTop() + $(window).height();
-
-                    if (elementTop < viewportBottom - 100) {
-                        $(this).addClass('visible');
-                    }
-                });
-            }
-
-            $(window).on('scroll', checkFadeIn);
-            checkFadeIn();
-        });
-    </script>
+    <script src="fitness_script.js"></script>
 </head>
 
 <body>
@@ -60,8 +18,8 @@
             <nav class="navbar">
                 <ul>
                     <li><a href="#features">Features</a></li>
-                    <li><a href="#workout-plans">Workout Plans</a></li>
-                    <li><a href="#meal-plans">Meal Plans</a></li>
+                    <li><a href="#workout-advertisement">Why FitX?</a></li>
+                    <li><a href="#meal-advertisement">Make The Right Choice!</a></li>
                 </ul>
             </nav>
         </div>
@@ -91,29 +49,121 @@
         </div>
     </section>
 
-    <section id="workout-plans" class="section fade-in">
-        <h2>Personalized Workout Plans</h2>
+    <section id="workout-advertisement" class="section fade-in">
+        <h2>Why FitX for Workouts?</h2>
         <div class="grid-container">
             <article class="card">
-                <img src="images/workout-feature.png" alt="Workout Plan Feature" class="feature-img">
-                <p>Generate workouts tailored to your fitness level, body type, and goals. Rate your favorite plans and track their impact.</p>
+                <img src="images/FitX-1.jpg" alt="The Best Fitness App" class="feature-img">
+                <h3>The Best Fitness App</h3>
+                <p>FitX revolutionizes workouts with innovative plans tailored for you.</p>
+            </article>
+            <article class="card">
+                <img src="images/FitX-2.png" alt="Unleash Your Full Potential" class="feature-img">
+                <h3>Unleash Your Full Potential</h3>
+                <p>Take your fitness journey to the next level with FitX.</p>
+            </article>
+            <article class="card">
+                <img src="images/FitX-3.jpeg" alt="Routines That Work for You" class="feature-img">
+                <h3>Routines That Work for You</h3>
+                <p>Explore expertly crafted routines tailored for all fitness levels.</p>
+            </article>
+            <article class="card">
+                <img src="images/FitX-4.jpg" alt="Your Fitness, Your Way" class="feature-img">
+                <h3>Your Fitness, Your Way</h3>
+                <p>Flexible options to suit your lifestyle and fitness needs.</p>
+            </article>
+            <article class="card">
+                <img src="images/FitX-5.png" alt="Designed for Every Body Type" class="feature-img">
+                <h3>Designed for Every Body Type</h3>
+                <p>Inclusive plans that work for everyone, no matter your goals.</p>
+            </article>
+            <article class="card">
+                <img src="images/FitX-6.png" alt="Simplify Your Fitness Journey" class="feature-img">
+                <h3>Simplify Your Fitness Journey</h3>
+                <p>Achieve results effortlessly with FitX's smart tools.</p>
+            </article>
+            <article class="card">
+                <img src="images/FitX-7.jpg" alt="Energize Every Day" class="feature-img">
+                <h3>Energize Every Day</h3>
+                <p>Stay active and focused with energy-boosting meal plans.</p>
+            </article>
+            <article class="card">
+                <img src="images/FitX-8.png" alt="Who's Gonna Carry The Boats?" class="feature-img">
+                <h3>Who's Gonna Carry The Boats?</h3>
+                <p>Stay hard! Don't do an arc, do a circle!</p>
             </article>
         </div>
     </section>
 
-    <section id="meal-plans" class="section fade-in">
-        <h2>Smart Meal Planning</h2>
+    <section id="meal-advertisement" class="section fade-in">
+        <h2>Smart Meals, Smarter Choices</h2>
         <div class="grid-container">
             <article class="card">
-                <img src="images/meal-feature.png" alt="Meal Plan Feature" class="feature-img">
-                <p>Combine your workout schedule with meals optimized for your body type, ensuring peak performance and recovery.</p>
+                <img src="images/FitX-9.png" alt="Meals That Match Your Goals" class="feature-img">
+                <h3>Meals That Match Your Goals</h3>
+                <p>Get the nutrition you need to achieve your fitness objectives.</p>
+            </article>
+            <article class="card">
+                <img src="images/FitX-10.png" alt="Affordable Nutrition Made Easy" class="feature-img">
+                <h3>Affordable Nutrition Made Easy</h3>
+                <p>Delicious and budget-friendly meals tailored for you.</p>
+            </article>
+            <article class="card">
+                <img src="images/FitX-11.png" alt="Designed for Peak Performance" class="feature-img">
+                <h3>Designed for Peak Performance</h3>
+                <p>Fuel your body with meals crafted for maximum results.</p>
+            </article>
+            <article class="card">
+                <img src="images/FitX-12.png" alt="Healthy Eating Simplified" class="feature-img">
+                <h3>Healthy Eating Simplified</h3>
+                <p>Discover how easy it is to stick to nutritious meal plans.</p>
+            </article>
+            <article class="card">
+                <img src="images/FitX-13.jpg" alt="Fuel Your Fitness Goals" class="feature-img">
+                <h3>Fuel Your Fitness Goals</h3>
+                <p>Power up your workouts with perfectly balanced meals.</p>
+            </article>
+            <article class="card">
+                <img src="images/FitX-14.png" alt="Energize Every Day" class="feature-img">
+                <h3>Energize Every Day</h3>
+                <p>Stay active and focused with energy-boosting meal plans.</p>
+            </article>
+            <article class="card">
+                <img src="images/FitX-15.png" alt="Stay Energized" class="feature-img">
+                <h3>Stay Energized</h3>
+                <p>Boost your day with meals designed to keep you fueled.</p>
+            </article>
+            <article class="card">
+                <img src="images/FitX-16.png" alt="Revitalize Your Routine" class="feature-img">
+                <h3>Revitalize Your Routine</h3>
+                <p>Enjoy meals that give you long-lasting energy.</p>
             </article>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 FitX Desktop. All rights reserved. <a href="#features">Explore Features</a></p>
-    </footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About FitX</h3>
+                <p>Your ultimate fitness companion for personalized workout and meal planning.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>fitxhandler@gmail.com</p>
+                <p>092481841914</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p><a href="#">Facebook</a></p>
+                <p><a href="#">Instagram</a></p>
+                <p><a href="#">Twitter</a></p>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 FitX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>       
 </body>
 
 </html>
